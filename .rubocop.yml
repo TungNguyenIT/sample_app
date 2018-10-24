@@ -1,0 +1,403 @@
+inherit_from:
+  - .rubocop_enabled.yml
+  - .rubocop_disabled.yml
+
+# Common configuration.
+AllCops:
+  # Include gemspec and Rakefile
+  Include:
+    - '**/*.gemspec'
+  Exclude:
+    - 'vendor/**/*'
+    - 'config/unicorn.rb'
+    - 'bin/*'
+    - 'db/**/*'
+    - 'spec/**/*'
+    - 'script/rails'
+    - 'config/**/*'
+
+Layout/AccessModifierIndentation:
+  EnforcedStyle: indent
+  SupportedStyles:
+    - outdent
+    - indent
+
+Layout/AlignHash:
+  EnforcedHashRocketStyle: key
+  EnforcedColonStyle: key
+  EnforcedLastArgumentHashStyle: ignore_implicit
+  SupportedLastArgumentHashStyles:
+    - always_inspect
+    - always_ignore
+    - ignore_implicit
+    - ignore_explicit
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+  SupportedStyles:
+    - with_first_parameter
+    - with_fixed_indentation
+
+Metrics/BlockNesting:
+  Max: 3
+
+Metrics/AbcSize:
+  Max: 20
+
+Style/BracesAroundHashParameters:
+  EnforcedStyle: no_braces
+  SupportedStyles:
+    - braces
+    - no_braces
+
+# Indentation of `when`.
+Layout/CaseIndentation:
+  EnforcedStyle: case
+  SupportedStyles:
+    - case
+    - end
+  IndentOneStep: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: nested
+  SupportedStyles:
+    - nested
+    - compact
+
+Style/ClassCheck:
+  EnforcedStyle: is_a?
+  SupportedStyles:
+    - is_a?
+    - kind_of?
+
+Metrics/ClassLength:
+  CountComments: false  # count full line comments?
+  Max: 100
+
+# Align with the style guide.
+Style/CollectionMethods:
+  # Mapping from undesired method to desired_method
+  # e.g. to use `detect` over `find`:
+  #
+  # CollectionMethods:
+  #   PreferredMethods:
+  #     find: detect
+  PreferredMethods:
+    collect: 'map'
+    collect!: 'map!'
+    inject: 'reduce'
+    detect: 'find'
+    find_all: 'select'
+
+# Checks formatting of special comments
+Style/CommentAnnotation:
+  Keywords:
+    - TODO
+    - FIXME
+    - OPTIMIZE
+    - HACK
+    - REVIEW
+
+# Avoid complex methods.
+Metrics/CyclomaticComplexity:
+  Max: 6
+
+# Multi-line method chaining should be done with leading dots.
+Layout/DotPosition:
+  EnforcedStyle: leading
+  SupportedStyles:
+    - leading
+    - trailing
+
+# Use empty lines between defs.
+Layout/EmptyLineBetweenDefs:
+  AllowAdjacentOneLineDefs: false
+
+Layout/EmptyLinesAroundBlockBody:
+  EnforcedStyle: no_empty_lines
+  SupportedStyles:
+    - no_empty_lines
+
+Layout/EmptyLinesAroundClassBody:
+  EnforcedStyle: no_empty_lines
+  SupportedStyles:
+    - no_empty_lines
+
+Layout/EmptyLinesAroundModuleBody:
+  EnforcedStyle: no_empty_lines
+  SupportedStyles:
+    - no_empty_lines
+
+Naming/FileName:
+  Exclude:
+    - '**/Rakefile'
+    - '**/Gemfile'
+    - '**/Capfile'
+
+# Checks use of for or each in multiline loops.
+Style/For:
+  EnforcedStyle: each
+  SupportedStyles:
+    - for
+    - each
+
+# Enforce the method used for string formatting.
+Style/FormatString:
+  EnforcedStyle: format
+  SupportedStyles:
+    - format
+    - sprintf
+    - percent
+
+# Built-in global variables are allowed by default.
+Style/GlobalVars:
+  AllowedVariables: []
+
+# `MinBodyLength` defines the number of lines of the a body of an if / unless
+# needs to have to trigger this cop
+Style/GuardClause:
+  MinBodyLength: 1
+
+Style/HashSyntax:
+  EnforcedStyle: ruby19
+  SupportedStyles:
+    - ruby19
+    - hash_rockets
+
+# Checks the indentation of the first key in a hash literal.
+Layout/IndentHash:
+  EnforcedStyle: special_inside_parentheses
+  SupportedStyles:
+    - special_inside_parentheses
+    - consistent
+
+Style/LambdaCall:
+  EnforcedStyle: call
+  SupportedStyles:
+    - call
+    - braces
+
+Metrics/LineLength:
+  Max: 80
+  AllowURI: true
+  Exclude:
+    - config/routes.rb
+
+
+Style/Next:
+  EnforcedStyle: skip_modifier_ifs
+  SupportedStyles:
+    - skip_modifier_ifs
+    - always
+
+Style/NonNilCheck:
+  IncludeSemanticChanges: false
+
+Style/MethodDefParentheses:
+  EnforcedStyle: require_no_parentheses
+  SupportedStyles:
+    - require_parentheses
+    - require_no_parentheses
+
+Metrics/MethodLength:
+  CountComments: false  # count full line comments?
+  Max: 10
+
+Naming/MethodName:
+  EnforcedStyle: snake_case
+  SupportedStyles:
+    - snake_case
+    - camelCase
+
+Style/NumericLiterals:
+  MinDigits: 5
+
+Metrics/ParameterLists:
+  Max: 5
+  CountKeywordArgs: true
+
+# Allow safe assignment in conditions.
+Style/ParenthesesAroundCondition:
+  AllowSafeAssignment: true
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%':  ()
+    '%i': ()
+    '%q': ()
+    '%Q': ()
+    '%r': '{}'
+    '%s': ()
+    '%w': ()
+    '%W': ()
+    '%x': ()
+
+Naming/PredicateName:
+  NamePrefixBlacklist:
+    - get_
+
+Style/RaiseArgs:
+  EnforcedStyle: exploded
+  SupportedStyles:
+    - compact # raise Exception.new(msg)
+    - exploded # raise Exception, msg
+
+
+Style/RedundantReturn:
+  # When true allows code like `return x, y`.
+  AllowMultipleReturnValues: false
+Style/Semicolon:
+  # Allow ; to separate several expressions on the same line.
+  AllowAsExpressionSeparator: false
+
+Style/SignalException:
+  EnforcedStyle: only_raise
+  SupportedStyles:
+    - only_raise
+    - only_fail
+    - semantic
+
+
+Style/SingleLineBlockParams:
+  Methods:
+    - reduce:
+        - a
+        - e
+    - inject:
+        - a
+        - e
+
+Style/SingleLineMethods:
+  AllowIfMethodIsEmpty: true
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+  SupportedStyles:
+    - single_quotes
+    - double_quotes
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: space
+  SupportedStyles:
+    - space
+    - no_space
+
+Layout/SpaceBeforeBlockBraces:
+  EnforcedStyle: no_space
+  SupportedStyles:
+    - space
+    - no_space
+
+Layout/SpaceInsideBlockBraces:
+  EnforcedStyle: no_space
+  SupportedStyles:
+    - space
+    - no_space
+  # Valid values are: space, no_space
+  EnforcedStyleForEmptyBraces: no_space
+  # Space between { and |. Overrides EnforcedStyle if there is a conflict.
+  SpaceBeforeBlockParameters: false
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+  EnforcedStyleForEmptyBraces: no_space
+  SupportedStyles:
+    - space
+    - no_space
+
+Layout/TrailingBlankLines:
+  EnforcedStyle: final_newline
+  SupportedStyles:
+    - final_newline
+    - final_blank_line
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: no_comma
+  SupportedStylesForMultiline:
+    - comma
+    - consistent_comma
+    - no_comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: no_comma
+  SupportedStylesForMultiline:
+    - comma
+    - consistent_comma
+    - no_comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: no_comma
+  SupportedStylesForMultiline:
+    - comma
+    - consistent_comma
+    - no_comma
+Style/TrivialAccessors:
+  ExactNameMatch: false
+  AllowPredicates: false
+  AllowDSLWriters: false
+  Whitelist:
+    - to_ary
+    - to_a
+    - to_c
+    - to_enum
+    - to_h
+    - to_hash
+    - to_i
+    - to_int
+    - to_io
+    - to_open
+    - to_path
+    - to_proc
+    - to_r
+    - to_regexp
+    - to_str
+    - to_s
+    - to_sym
+
+Naming/VariableName:
+  EnforcedStyle: snake_case
+  SupportedStyles:
+    - snake_case
+    - camelCase
+
+Style/WordArray:
+  MinSize: 0
+
+##################### Lint ##################################
+
+# Allow safe assignment in conditions.
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: true
+
+# Align ends correctly.
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: keyword
+
+Layout/DefEndAlignment:
+  EnforcedStyleAlignWith: start_of_line
+
+##################### Rails ##################################
+
+Rails/ActionFilter:
+  EnforcedStyle: action
+  SupportedStyles:
+    - action
+    - filter
+  Include:
+    - app/controllers/**/*.rb
+
+Rails/HasAndBelongsToMany:
+  Include:
+    - app/models/**/*.rb
+
+Rails/ReadWriteAttribute:
+  Include:
+    - app/models/**/*.rb
+
+Rails/ScopeArgs:
+  Include:
+    - app/models/**/*.rb
+
+Rails/Validation:
+  Include:
+    - app/models/**/*.rb
