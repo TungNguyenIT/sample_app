@@ -12,7 +12,17 @@ vi:
     home:
       home: "Trang chủ"
       sample: "Ứng dụng sample"
+      welcom: "Chào mừng bạn đến với Sample App"
+      sub_title: "Đây là trang chủ của sample app"
+      sign_up: "Tạo tài khoản"
+      login: "Đăng nhập"
+      news: "Tin mới"
+      logo: "Logo của tôi"
+      kitten: "Mèo của tôi"
     help:
       help: "Giúp đỡ"
     contact:
       contact: "Liên hệ"
+  users:
+    new:
+      login: "Trang đăng nhập"
