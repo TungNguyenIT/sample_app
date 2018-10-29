@@ -1,12 +1,11 @@
 en:
   layouts:
     application:
-      title: "Ruby on Rails Tutorial Sample App"
-      title_home: "Home"
       language_e: "English"
       language_v: "Vietnamese"
   static_pages:
     book: "Book"
+    title: "Rails tutorial"
     about:
       about: "About"
       title_about: "Ruby on Rail"
