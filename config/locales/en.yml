@@ -27,3 +27,6 @@ en:
   users:
     new:
       login: "Login"
+      create_acc: "Create new account"
+  shared:
+    error: "Error"
