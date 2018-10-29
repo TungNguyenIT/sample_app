@@ -1,16 +1,16 @@
 vi:
   layouts:
     application:
-      title: "Hướng dẫn Ruby on rails"
-      title_home: "Trang chủ"
       language_e: "Tiếng Anh"
       language_v: "Tiếng việt"
   static_pages:
     book: "Sách"
+    title: "Hướng dẫn rails"
     about:
       about: "Thông tin thêm"
       title_about: "Ruby on Rail"
     home:
+      home: "Trang chủ"
       sample: "Ứng dụng sample"
     help:
       help: "Giúp đỡ"
