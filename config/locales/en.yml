@@ -10,9 +10,19 @@ en:
       about: "About"
       title_about: "Ruby on Rail"
     home:
+      welcom: "Welcom to Sample App"
       home: "Home"
       sample: "Sample app"
+      sub_title: "This is the home page for the Ruby on Rails Tutorial sample application."
+      sign_up: "Sign up now"
+      login: "Login"
+      news: "News"
+      logo: "My logo"
+      kitten: "My cat"
     help:
       help: "Help"
     contact:
       contact: "Contact"
+  users:
+    new:
+      login: "Login"
