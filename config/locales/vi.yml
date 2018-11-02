@@ -4,9 +4,9 @@ vi:
       language_e: "Tiếng Anh"
       language_v: "Tiếng việt"
   static_pages:
-    book: "Sách"
     title: "Hướng dẫn rails"
     about:
+      book: "Sách"
       about: "Thông tin thêm"
       title_about: "Ruby on Rail"
     home:
@@ -19,6 +19,7 @@ vi:
       news: "Tin mới"
       logo: "Logo của tôi"
       kitten: "Mèo của tôi"
+      sample: "Ứng dụng sample"
     help:
       help: "Giúp đỡ"
     contact:

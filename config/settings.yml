@@ -1,0 +1,12 @@
+user:
+  name:
+    length: 60
+  email:
+    length: 250
+    case_sensitive: false
+  password:
+    length: 10
+static_pages:
+  link_rails: "http://www.railstutorial.org/"
+layout:
+  link_news: "http://news.railstutorial.org/"
