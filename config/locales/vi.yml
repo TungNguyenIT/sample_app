@@ -27,3 +27,6 @@ vi:
   users:
     new:
       login: "Trang đăng nhập"
+      create_acc: "Tạo tài khoản mới"
+  shared:
+      error: "Lỗi"
