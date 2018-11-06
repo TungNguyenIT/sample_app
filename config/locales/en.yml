@@ -4,9 +4,9 @@ en:
       language_e: "English"
       language_v: "Vietnamese"
   static_pages:
-    book: "Book"
     title: "Rails tutorial"
     about:
+      book: "Book"
       about: "About"
       title_about: "Ruby on Rail"
     home:
@@ -19,6 +19,7 @@ en:
       news: "News"
       logo: "My logo"
       kitten: "My cat"
+      sample: "Sample App"
     help:
       help: "Help"
     contact:
