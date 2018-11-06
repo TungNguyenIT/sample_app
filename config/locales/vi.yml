@@ -28,5 +28,22 @@ vi:
     new:
       login: "Trang đăng nhập"
       create_acc: "Tạo tài khoản mới"
+    create:
+      welcome: "Chào mừng đến với ứng dụng sample"
+    show:
+      not_exits: "Người dùng không tồn tại"
   shared:
       error: "Lỗi"
+  sessions:
+    new:
+      login: "Đăng nhập"
+      signup: "Tạo tài khoản mới"
+    create:
+      invalid: "Sai email hoặc mật khẩu"
+  header:
+    login: "Đăng nhập"
+    logout: "Đăng xuất"
+    profile: "Thông tin cá nhân"
+    setting: "Cài đặt"
+    user: "Người dùng"
+    account: "Tài khoản"

@@ -1,18 +1,22 @@
 class UsersController < ApplicationController
-
   def new
     @user = User.new
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by id: params[:id]
+
+    return if @user
+    flash[:danger] = t ".not_exits"
+    redirect_to root_path
   end
 
   def create
     @user = User.new user_params
-    
+
     if @user.save
-      flash[:success] = t "static_pages.home.welcom"
+      log_in @user
+      flash[:success] = t ".welcome"
       redirect_to @user
     else
       render :new
@@ -23,6 +27,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit :name, :email, :password,
-                                 :password_confirmation
+      :password_confirmation
   end
 end
