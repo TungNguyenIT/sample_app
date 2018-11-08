@@ -28,5 +28,22 @@ en:
     new:
       login: "Login"
       create_acc: "Create new account"
+    create:
+      welcome: "Welcom to sample app"
+    show:
+      not_exits: "User does not exits"
   shared:
     error: "Error"
+  sessions:
+    new:
+      login: "Login"
+      signup: "Sign up now"
+    create:
+      invalid: "Invalid email or password"
+  header:
+    login: "Login"
+    logout: "Logout"
+    profile: "Profile"
+    setting: "Setting"
+    user: "User"
+    account: "Account"
