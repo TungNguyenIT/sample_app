@@ -10,3 +10,5 @@ static_pages:
   link_rails: "http://www.railstutorial.org/"
 layout:
   link_news: "http://news.railstutorial.org/"
+sessions:
+  remember_me: 1

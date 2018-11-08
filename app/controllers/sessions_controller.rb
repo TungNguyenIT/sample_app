@@ -6,6 +6,11 @@ class SessionsController < ApplicationController
 
     if user&.authenticate params[:session][:password]
       log_in user
+      if params[:session][:remember_me] == Settings.sessions.remember_me
+        remember user
+      else
+        forget user
+      end
       redirect_to user
     else
       flash[:danger] = t ".invalid"

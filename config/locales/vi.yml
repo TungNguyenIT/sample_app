@@ -28,6 +28,7 @@ vi:
     new:
       login: "Trang đăng nhập"
       create_acc: "Tạo tài khoản mới"
+      remember: "Nhớ!"
     create:
       welcome: "Chào mừng đến với ứng dụng sample"
     show:
