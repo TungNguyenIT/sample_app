@@ -38,6 +38,7 @@ en:
     new:
       login: "Login"
       signup: "Sign up now"
+      remember: "Remember me!"
     create:
       invalid: "Invalid email or password"
   header:
