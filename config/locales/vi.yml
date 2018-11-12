@@ -25,14 +25,35 @@ vi:
     contact:
       contact: "Liên hệ"
   users:
+    index:
+      all_user: "Tất cả người dùng"
     new:
       login: "Trang đăng nhập"
       create_acc: "Tạo tài khoản mới"
       remember: "Nhớ!"
     create:
       welcome: "Chào mừng đến với ứng dụng sample"
+      faild: "Lỗi!!!"
     show:
       not_exits: "Người dùng không tồn tại"
+    edit: 
+      edit: "Sửa thông tin nguời dùng"
+      update_profile: "Cập nhật thông tin"
+      confirmation: "Xác nhận"
+      save: "Lưu thay đổi"
+      change: "Thay đổi"
+    update:
+      update: "Cập nhật thành công"
+      not_success: "Không thành công"
+    logger_in_user:
+      require_login: "Hãy đăng nhập"
+    user:
+      delete_user: "Xóa"
+      confirm: "Bạn có chắc chắn không?"
+    destroy:
+      user_delete: "Xóa Thành công"
+    find_user: 
+      not_find: "Không tìm thấy"
   shared:
       error: "Lỗi"
   sessions:
