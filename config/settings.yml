@@ -1,14 +1,19 @@
 user:
+  size: 50
   name:
     length: 60
   email:
     length: 250
     case_sensitive: false
   password:
-    length: 10
+    length: 3
+  link_change: "http://gravatar.com/emails"
 static_pages:
   link_rails: "http://www.railstutorial.org/"
 layout:
   link_news: "http://news.railstutorial.org/"
 sessions:
   remember_me: 1
+user_helper:
+  size: 10
+per_page: 2

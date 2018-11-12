@@ -25,13 +25,33 @@ en:
     contact:
       contact: "Contact"
   users:
+    index:
+      all_user: "All user"
     new:
       login: "Login"
       create_acc: "Create new account"
     create:
       welcome: "Welcom to sample app"
+      faild: "Failed"
+      check_your_email: "Please check your email to activate your account."
     show:
       not_exits: "User does not exits"
+    edit:
+      edit: "Edit user"
+      update_profile: "Update your profile"
+      confirmation: "Confirmation"
+      save: "Save change"
+      change: "Change"
+    update:
+      update: "Profile updated"
+      not_success: "Not success"
+    logger_in_user:
+      require_login: "Please log in"
+    user:
+      delete_user: "Delete"
+      confirm: "Are you sure?"
+    destroy:
+      user_delete: "user deleted"
   shared:
     error: "Error"
   sessions:
@@ -48,3 +68,20 @@ en:
     setting: "Setting"
     user: "User"
     account: "Account"
+  not_find: "Can't find"
+  mailers:
+    user_mailer:
+      hi: "hi"
+  user_mailer:
+    account_activation:
+      sample: "Sample App"
+      welcom: "Welcom to sample. Click link below to acvtivation"
+      avtivate: "Activate"
+      hi: "Hi"
+  account_activate:
+    edit:
+      account_activate: "Account Activated!"
+      invalid_account: "Invalid activation link" 
+  sessions_controller:
+    create:
+      not_activate: "Acc not activated. Check your email for activation link"
