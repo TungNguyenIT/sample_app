@@ -1,24 +1,28 @@
 class User < ApplicationRecord
   attr_reader :remember_token, :activation_token
-  before_save :downcase_email
-  before_create :create_avtivation_digest
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
   validates :name, presence: true,
-    length: {maximum: Settings.user.name.length}
+  length: {maximum: Settings.user.name.length}
   validates :email, presence: true,
-    length: {maximum: Settings.user.email.length},
-    format: {with: VALID_EMAIL_REGEX},
-    uniqueness: {case_sensitive: Settings.user.case_sensitive}
+  length: {maximum: Settings.user.email.length},
+  format: {with: VALID_EMAIL_REGEX},
+  uniqueness: {case_sensitive: Settings.user.case_sensitive}
   validates :password, presence: true,
-    length: {minimum: Settings.user.password.length}
+  length: {minimum: Settings.user.password.length}
 
   has_secure_password
+  before_save :downcase_email
+  before_create :create_avtivation_digest
 
   class << self
     def digest string
-      cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                    BCrypt::Engine.cost
-      BCrypt::Password.create(string, cost: cost)
+      cost = if ActiveModel::SecurePassword.min_cost.present?
+               BCrypt::Engine::MIN_COST
+             else
+               BCrypt::Engine.cost
+             end
+      BCrypt::Password.create string, cost: cost
     end
 
     def new_token
