@@ -33,6 +33,7 @@ en:
     create:
       welcome: "Welcom to sample app"
       faild: "Failed"
+      check_your_email: "Please check your email to activate your account."
     show:
       not_exits: "User does not exits"
     edit:
@@ -68,3 +69,19 @@ en:
     user: "User"
     account: "Account"
   not_find: "Can't find"
+  mailers:
+    user_mailer:
+      hi: "hi"
+  user_mailer:
+    account_activation:
+      sample: "Sample App"
+      welcom: "Welcom to sample. Click link below to acvtivation"
+      avtivate: "Activate"
+      hi: "Hi"
+  account_activate:
+    edit:
+      account_activate: "Account Activated!"
+      invalid_account: "Invalid activation link" 
+  sessions_controller:
+    create:
+      not_activate: "Acc not activated. Check your email for activation link"

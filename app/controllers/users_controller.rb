@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy
   before_action :find_user, only: %i(show edit update destroy)
   before_action :correct_user, only: %i(edit update)
-  
+
   def index
     @users = User.page(params[:page]).per Settings.per_page
   end
@@ -11,14 +11,14 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-  
+
   def create
     @user = User.new user_params
 
     if @user.save
-      log_in @user
-      flash[:success] = t ".welcome"
-      redirect_to @user
+      UserMailer.account_activation(@user).deliver_now
+      flash[:info] = t ".check_your_email"
+      redirect_to root_url
     else
       flash[:danger] = t ".faild"
       render :new
@@ -44,18 +44,18 @@ class UsersController < ApplicationController
     flash[:success] = t ".user_delete"
     redirect_to users_path
   end
-  
+
   private
-  
+
   def user_params
     params.require(:user).permit :name, :email, :password,
-    :password_confirmation
+      :password_confirmation
   end
-  
+
   def logger_in_user
     return if logged_in?
     store_location
-    flash[:danger] = t ".require_login"  
+    flash[:danger] = t ".require_login"
     redirect_to login_path
   end
 
@@ -74,5 +74,4 @@ class UsersController < ApplicationController
     flash[:danger] = t "not_find"
     redirect_to root_path
   end
-
 end
