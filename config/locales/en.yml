@@ -59,6 +59,7 @@ en:
       login: "Login"
       signup: "Sign up now"
       remember: "Remember me!"
+      forgot: "Forgot password?"
     create:
       invalid: "Invalid email or password"
   header:
@@ -78,6 +79,10 @@ en:
       welcom: "Welcom to sample. Click link below to acvtivation"
       avtivate: "Activate"
       hi: "Hi"
+    password_reset:
+      pass_reset: "Password reset"
+      to_reset: "To reset your password click the link below:"
+      exprire: "This link will expire in two hours."
   account_activate:
     edit:
       account_activate: "Account Activated!"
@@ -85,3 +90,17 @@ en:
   sessions_controller:
     create:
       not_activate: "Acc not activated. Check your email for activation link"
+  password_resets:
+    create:
+      info: "Email sent with password reset instructions"    
+      not_found: "Email address not found"
+    new:
+      forgot: "Forgot password"
+    edit:
+      reset_password: "Reset password"
+      confirm: "Confirmation"
+      update_password: "Update password"
+    update:
+      empty: "Can't be empty"
+      has_been_reset: "pass has been update"
+      expired: "Password reset has expired."
