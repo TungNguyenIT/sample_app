@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logger_in_user, only: %i(index edit update)
+  before_action :logger_in_user, only: %i(index edit update destroy)
   before_action :admin_user, only: :destroy
   before_action :find_user, only: %i(show edit update destroy)
   before_action :correct_user, only: %i(edit update)
@@ -25,7 +25,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @microposts = @user.microposts.page(params[:page]).per Settings.per_page
+  end
 
   def edit; end
 
@@ -50,13 +52,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation
-  end
-
-  def logger_in_user
-    return if logged_in?
-    store_location
-    flash[:danger] = t ".require_login"
-    redirect_to login_path
   end
 
   def correct_user

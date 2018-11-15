@@ -1,7 +1,7 @@
 class PasswordResetsController < ApplicationController
   before_action :find_user, only: %i(edit update)
   before_action :check_expiration, only: %i(edit update)
-  
+
   def new; end
 
   def create
@@ -45,9 +45,9 @@ class PasswordResetsController < ApplicationController
   end
 
   def password_reset_expired?
-    reset_sent_at < 2.hours.ago
+    reset_sent_at < Settings.expired.minutes.ago
   end
-    
+
   def check_expiration
     return unless @user.password_reset_expired?
     flash[:danger] = t ".expired"

@@ -36,6 +36,7 @@ en:
       check_your_email: "Please check your email to activate your account."
     show:
       not_exits: "User does not exits"
+      micropost: "Micropost"
     edit:
       edit: "Edit user"
       update_profile: "Update your profile"
@@ -54,6 +55,9 @@ en:
       user_delete: "user deleted"
   shared:
     error: "Error"
+    micropost_form:
+      compose_new_micro: "Compose New Micro"
+      post_submid: "Submit"
   sessions:
     new:
       login: "Login"
@@ -104,3 +108,12 @@ en:
       empty: "Can't be empty"
       has_been_reset: "pass has been update"
       expired: "Password reset has expired."
+  microposts:
+    micropost:
+      post: "Posted"
+      ago: "ago."
+      you_sure: "Are you sure?"
+    create:
+      micro_create: "New Micropost Created"
+    destroy:
+      failed: "Delete success"
