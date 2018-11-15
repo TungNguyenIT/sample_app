@@ -17,3 +17,6 @@ sessions:
 user_helper:
   size: 10
 per_page: 2
+max_size_image: 5
+resize_to_limit: [400, 400]
+maximum: 140
