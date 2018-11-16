@@ -71,6 +71,10 @@ class User < ApplicationRecord
     microposts
   end
 
+  def password_reset_expired?
+    reset_sent_at < Settings.expired.hours.ago
+  end
+
   private
 
   def downcase_email

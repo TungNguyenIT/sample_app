@@ -44,10 +44,6 @@ class PasswordResetsController < ApplicationController
     @user = User.find_by email: params[:email]
   end
 
-  def password_reset_expired?
-    reset_sent_at < Settings.expired.minutes.ago
-  end
-
   def check_expiration
     return unless @user.password_reset_expired?
     flash[:danger] = t ".expired"
