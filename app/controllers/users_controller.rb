@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logger_in_user, only: %i(index edit update destroy)
+  before_action :logger_in_user, only: %i(index edit update destroy following followers)
   before_action :admin_user, only: :destroy
   before_action :find_user, only: %i(show edit update destroy)
   before_action :correct_user, only: %i(edit update)
@@ -45,6 +45,20 @@ class UsersController < ApplicationController
     @user.destroy
     flash[:success] = t ".user_delete"
     redirect_to users_path
+  end
+
+  def following
+    @title = "Following"
+    @user = User.find_by id: params[:id]
+    @user = @user.following.page(params[:page]).per Settings.per_page
+    render "show_follow"
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.find_by id: params[:id]
+    @user = @user.followers.page(params[:page]).per Settings.per_page
+    render "show_follow"
   end
 
   private

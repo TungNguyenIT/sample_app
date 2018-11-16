@@ -20,3 +20,4 @@ per_page: 2
 max_size_image: 5
 resize_to_limit: [400, 400]
 maximum: 140
+expired: 2
