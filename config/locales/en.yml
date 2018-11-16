@@ -56,7 +56,7 @@ en:
     follow:
       follow: "Follow"
     unfollow:
-      unfollow: "Unfollow"
+      unfollow: "Unfollow now"
   shared:
     error: "Error"
     micropost_form:
@@ -124,3 +124,8 @@ en:
       micro_create: "New Micropost Created"
     destroy:
       failed: "Delete success"
+  follows:
+    follows: 
+      following: "Followings"
+    followers:
+      follower: "Follower"

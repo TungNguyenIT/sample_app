@@ -3,10 +3,10 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
   has_many :microposts, dependent: :destroy
-  has_many :active_relationships, class_name: "Relationship",
+  has_many :active_relationships, class_name: Relationship.name,
                                   foreign_key: "follower_id",
                                   dependent: :destroy
-  has_many :passsive_relationships, class_name: "Relationship",
+  has_many :passsive_relationships, class_name: Relationship.name,
                                     foreign_key: "followed_id",
                                     dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
