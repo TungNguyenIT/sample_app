@@ -53,11 +53,18 @@ en:
       confirm: "Are you sure?"
     destroy:
       user_delete: "user deleted"
+    follow:
+      follow: "Follow"
+    unfollow:
+      unfollow: "Unfollow now"
   shared:
     error: "Error"
     micropost_form:
       compose_new_micro: "Compose New Micro"
       post_submid: "Submit"
+    stats:
+      following: "Following"
+      follower: "Follower"
   sessions:
     new:
       login: "Login"
@@ -117,3 +124,8 @@ en:
       micro_create: "New Micropost Created"
     destroy:
       failed: "Delete success"
+  follows:
+    follows: 
+      following: "Followings"
+    followers:
+      follower: "Follower"
